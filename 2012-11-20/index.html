@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Tetra.js - The JS & UI framework of Viadeo</title>
+    
+    <meta name="description" content="Tetra.js presentation with impress.js" />
+    <meta name="author" content="Olivier Hory" />
+
+    <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" />
+    <link href="css/prism.css" rel="stylesheet" />
+    <link href="css/tetra-ui-1.0.0.min.css" rel="stylesheet" />
+    <link href="css/tetra-impress.css" rel="stylesheet" />
+
+    <script src="js/prism.js"></script>
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tetra-core.min.js"></script>
+    <script src="js/tetra-start.js"></script>
+</head>
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step" data-x="0" data-y="0" data-rotate-x="5" data-scale="4">
+        <h1>Tetra</h1>
+        <p>The JS & UI framework of <img src="images/viadeo.png" width="250"></p>
+        <div id="links">
+            <h2>Links</h2>
+            <ol>
+                <li>
+                    <code>Tetra.js
+                    <a href="https://github.com/viadeo/tetra">https://github.com/viadeo/tetra</a></code>
+                </li>
+                <li>
+                    <code>Tetra UI
+                    <a href="http://viadeo.github.com/tetra-ui/">http://viadeo.github.com/tetra-ui/</a></code>
+                </li>
+                <li><br/>
+                    <code>Impress.js: the presentation framework
+                    <a href="https://github.com/bartaz/impress.js">https://github.com/bartaz/impress.js</a></code>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="js" class="step slide js" data-x="-1000" data-y="1400" data-z="0" data-rotate-x="-40">
+        <span class="square"></span>
+        <h2>Javascript</h2>
+        <p>a clean MVC javascript framework to build faster, more maintainable and better structured apps.</p>
+
+        <ul>
+            <li>
+                Event delegation
+                <p>One listener to rule them all</p>
+            </li>
+            <li>
+                MVC
+                <p>High maintainability</p>
+            </li>
+            <li>
+                Object oriented
+                <p>Re-usability of common objects</p>
+            </li>
+            <li>
+                Templating
+                <p>Display your data using js templates</p>
+            </li>
+            <li>
+                Abstracted library
+                <p>Inspired by jQuery, works with Prototype</p>
+            </li>
+        </ul>
+    </div>
+
+    <div id="css-html" class="step slide" data-x="-1000" data-y="2000" data-z="-600" data-rotate-x="-40">
+        <span class="square square2"></span>
+        <span class="square"></span>
+        <h2>HTML, CSS and Less...</h2>
+        <p>a smart, easy-to-use toolkit for creating rich interfaces in lightning speed!</p>
+
+        <ul>
+            <li>
+                Grid
+                <p>A consistent layout both for users &amp; developers</p>
+            </li>
+            <li>
+                Rich Containers
+                <p>Common layout patterns, displaying avatars for example</p>
+            </li>
+            <li>
+                Typography
+                <p>Displaying headings, badges for notifications, boxes of content, tags, labels</p>
+            </li>
+            <li>
+                Forms
+                <p>Initially a fork from Twitter Bootstrap! We now give the framework his own life</p>
+            </li>
+            <li>
+                Variables
+                <p>Shared values for size, spacing and color</p>
+            </li>
+            <li>
+                Wait... CSS does that?
+            </li>
+        </ul>
+    </div>
+
+    <div id="components" class="step slide components" data-x="-1000" data-y="2600" data-z="-1200" data-rotate-x="-40">
+        <span class="square"></span>
+        <h2>Components</h2>
+        <p>When JS meets CSS &amp; HTML</p>
+
+        <ul>
+            <li>
+                Less CSS... and more LESS
+                <p>Optimizing CSS reusability, modular approach with files separated by component</p>
+            </li>
+            <li>
+                Factorized
+                <p>Using mixins, variables, interpolation, operations</p>
+            </li>
+            <li>
+                Buttons, menus, dialogs...
+                <p>Common Tetra JS components for tabs, modal boxes, tooltips</p>
+            </li>
+            <li>
+                Process of adding a new component
+                <p>Iterative (agile) process, pairing designers with front-enders</p>
+            </li>
+            <li>
+                Experiment &amp; improve
+                <p>In-browser prototyping, designing, developing without the whole web app</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- JS -->
+    <script type="text/javascript">
+tetra.view.register('searchBar', {  
+
+    scope: 'search',
+
+    constr: function(me, app, _) { return {  
+  
+        events: {
+            user: {
+                'click': {
+                    '#search-bar button': function(e, elm) {  
+                        var query = elm.siblings('input').val();
+                        $('#search-bar2 input').val(query);
+                        impress().next();
+                    }
+                }
+            }
+        },
+
+        methods: {} 
+   };}  
+});
+    </script>
+
+    <!-- MVC -->
+    <div id="view" class="step dust js" data-x="4100" data-y="2700" data-z="-3000" data-rotate="50" data-scale="3">
+        <span class="square"></span>
+        <h2>View</h2>
+
+        <article>
+        <div id="search-bar" class="core-form form-horizontal">
+            <div class="input-append">
+                <input class="span2" id="appendedButtonPrimary" size="16" type="text"><button class="btn btn-primary" type="button">Go!</button>
+            </div>
+        </div>
+
+        <p>DOM event listener</p>
+        <pre data-line="1,4,10-15"><code class="language-javascript">
+tetra.view.register('searchBar', {  
+
+    scope: 'search',  
+    use: ['searchManager'],  
+
+    constr: function(me, app, _) { return {  
+  
+        events: {
+            user: {
+                'click': {
+                    '#search-bar button': function(e, elm) {  
+                        var query = elm.siblings('input').val();  
+                        app.notify('search query', query);  
+                    }
+                }
+            },
+
+            controller: {  
+                // Controller listeners
+            }
+        },
+
+        methods: {} 
+    };}
+});
+        </code></pre>
+        </article>
+    </div>
+
+    <script type="text/javascript">
+        document.querySelector('#search-bar button').addEventListener('click', function(e) {  
+                var query = $(e.target).siblings('input').val();
+                $('#search-bar2 input').val(query);
+                console.log('test');
+                impress().next();
+            });
+    </script>
+
+    <div id="controller" class="step dust js" data-x="3400" data-y="3000" data-z="-3500" data-rotate="180" data-scale="3">
+        <span class="square"></span>
+        <h2>Controller</h2>
+
+        <article>
+        <p>View listener + ORM call</p>
+        <pre data-line="1,4,10-12"><code class="language-javascript">
+tetra.controller.register('searchManager', {
+    
+    scope: 'search',
+    use: ['searchResult'],
+    
+    constr: function(me, app, page, orm) { return {
+        
+        events: {
+            view: {
+                'search query': function(query){
+                    orm('searchResult').fetch({q: query});
+                }
+            },
+
+            model: {
+                // model listeners
+            }
+            
+            controller: {}
+        },
+
+        methods: {}
+    };}
+});
+        </code></pre>
+        </article>
+    </div>
+
+    <div id="model" class="step dust js" data-x="2800" data-y="3150" data-z="-4000" data-rotate="235" data-scale="2">
+        <span class="square"></span>
+        <h2>Model</h2>
+
+        <article>
+        <p>Class definition</p>
+        <pre data-line="1,6-8,14-18"><code class="language-javascript">
+tetra.model.register('searchResult', {
+
+    scope: 'search',
+
+    req: {
+        fetch: {  
+            url: '/member/search'  
+        }
+    /*, save: {}
+      , del: {}
+      , reset: {} */
+    },
+  
+    attr: {
+        memberId: 0,  
+        name: '',  
+        desc: ''
+    },  
+  
+    methods: function(attr) { return {  
+        validate: function(attr, errors){  
+            if (attr.name == '') errors.push('name');  
+            if (attr.desc == '') errors.push('desc');  
+            return errors;  
+        }  
+    };}  
+  
+});
+        </code></pre>
+        </article>
+    </div>
+
+    <div id="json-format" class="step dust js" data-x="2500" data-y="3000" data-z="-4500" data-rotate="290" data-scale="2">
+        <span class="square"></span>
+        <h2>JSON format</h2>
+
+        <article>
+        <p>Standard format supported by Tetra</p>
+        <pre data-line="1-11,20-21"><code class="language-javascript">
+{  
+    "status": "SUCCESS/FAIL",  
+    "data": {  
+        4: {
+            memberId : 4,  
+            name : 'John Doe',  
+            desc : 'Developer at Viadeo'
+        },
+        9: {...},  
+        37: {...}  
+    },  
+    "alerts": {  
+        "attr1": "alert message 1",  
+        "attr2": "alert message 2"  
+    },  
+    "errors": [  
+        "error message x",  
+        "error message y"  
+    ],  
+    "count": 10  
+}
+        </code></pre>
+        </article>
+    </div>
+
+    <div id="controller2" class="step dust js" data-x="3400" data-y="3000" data-z="-3501" data-rotate="180" data-scale="3">
+        <span class="square"></span>
+        <h2>Controller</h2>
+
+        <article>
+        <p>Model listener</p>
+        <pre id="ctrl2-code" data-line="14-18"><code class="language-javascript">
+tetra.controller.register('searchManager', {
+    
+    scope: 'search',
+    use: ['searchResult'],
+    
+    constr: function(me, app, page, orm) { return {
+        
+        events: {
+            view: {
+                // view listeners
+            },
+
+            model: {
+                'searchResult': {
+                    'append': function(col_popover) {
+                        app.notify('display results', col);
+                    }
+                }
+            }
+            
+            controller: {}
+        },
+
+        methods: {}
+    };}
+});
+        </code></pre>
+        </article>
+    </div>
+
+<div id="col-popover-content" class="hidden">
+<pre><code class="language-javascript">[
+    {
+        get: function(attr){},
+        getAll: function() {},
+        set: function(attr, val) {},
+        update: function(object) {},
+        revert: function() {},
+        save: function() {},
+        remove: function() {},
+        validate: function() {}
+    },
+    [object],
+    [object]
+]</code></pre>
+</div>
+
+<script type="text/javascript">
+document.getElementById('controller2').addEventListener('impress:stepenter', function() {
+    $('#ctrl2-code code').html($('#ctrl2-code code').html().replace('col_popover','<span class="popover-display">col<span id="col-popover" class="popover"><span class="popover-header">col [array]</span><span class="popover-content">'+ $('#col-popover-content').html() +'</span></span></span>'))
+})
+</script>
+
+
+    <!-- DOM interactions -->
+    <div id="view2" class="step dust js" data-x="4100" data-y="2700" data-z="-3001" data-rotate="50" data-scale="3">
+        <span class="square"></span>
+        <h2>View</h2>
+
+        <article>
+        <div id="search-bar2" class="core-form form-horizontal">
+            <div class="input-append">
+                <input class="span2" id="appendedButtonPrimary" size="16" type="text"><button class="btn btn-primary" type="button">Go!</button>
+            </div>
+        </div>
+
+        <p>Controller listener</p>
+        <pre data-line="14-20"><code class="language-javascript">
+tetra.view.register('searchBar', {  
+
+    scope: 'search',  
+    use: ['searchManager'],
+
+    constr: function(me, app, _) { return {  
+  
+        events: {
+            user: {
+                // DOM listeners
+            },
+
+            controller: {  
+                'display results' : function(col){
+                    var results = [];
+                    for(var i, len=col.length; i < len; i++) {
+                        results.push(col[i].getAll());
+                    }
+                    app.exec(...);
+                }
+            }
+        },
+
+        methods: {} 
+    };}
+});
+        </code></pre>
+        </article>
+    </div>
+
+    <div id="templating" class="step dust js" data-x="4400" data-y="900" data-z="-3500" data-rotate="50" data-scale="1">
+        <span class="square"></span>
+        <h2>Templating system</h2>
+
+        <article>
+            <p>Javascript evaluation and DOM insertion</p>
+            <pre data-line="1-7"><code class="language-javascript">
+app.exec(
+        'result_list',
+        {results: [{name:"John Doe", desc:"Developer..."}, ...]},
+        function(html) {  
+            _('body').append(html);
+        }
+    );
+            </code></pre>
+
+            <p>HTML template</p>
+            <pre data-line="1"><code class="language-markup">
+&lt;script id="tmpl_result_list" type="text/html"&gt;
+    &lt;ol&gt;
+    {% for(var i=0, len=results.length; i < len; i++) { %}
+        &lt;li class="user"&gt;   
+            &lt;h2&gt; {%=results[i].name%}&lt;/h2&gt;  
+            {%=results[i].desc%}
+        &lt;/li&gt;
+    {% } %}
+    &lt;/ol&gt;
+&lt;/script&gt;
+            </code></pre>
+        </article>
+    </div>
+
+    <div id="bootnode" class="step dust js" data-x="4800" data-y="500" data-z="-4000" data-rotate="50" data-scale="1">
+        <span class="square"></span>
+        <h2>Bootnode</h2>
+
+        <article>
+            Class and data-attributes to add on your HTML tag:
+            <ul>
+                <li><code>class="bootnode"</code></li>
+                <li><code>data-app</code> or <code>data-comp</code>: the source to load</li>
+                <li><code>data-event</code>: event listened (click, mouseover or focus)</li>
+            </ul>
+
+            <pre data-line="1"><code class="language-markup">
+&lt;div class="bootnode" data-view="search/searchBar" data-event="click"&gt; 
+...  
+&lt;/div&gt;
+            </code></pre>
+            <p>associated with the dependency management system</p>
+
+            or
+
+            <pre data-line="1"><code class="language-markup">
+&lt;div class="bootnode" data-comp="searchPackage" data-event="click"&gt;
+...  
+&lt;/div&gt; 
+            </code></pre>
+            <p>where <code>myPackage</code> is a script available on <code>COMP_PATH/myPackage.js</code></p>
+        </article>
+    </div>
+
+
+    <!-- UI -->
+    <div id="layout-typo" class="step dust html" data-x="4000" data-y="6400" data-z="-1500" data-rotate="-5" data-scale="2">
+        <span class="square"></span>
+        <h2>Style guide</h2>
+        <p>Ensuring brand identity &amp; consistency</p>
+
+        <ul>
+            <li>
+                Layout
+                <p>Grid, block placements, spacings (margins), wireframes</p>
+            </li>
+            <li>
+                Branding
+                <p>Color palette, SVG logo</p>
+            </li>
+            <li>
+                Typography
+                <p>Fonts, headings, paragraphs, lists, tables</p>
+            </li>
+            <li>
+                Navigation
+                <p>Links, drop-downs, tabs</p>
+            </li>
+            <li>
+                Forms
+                <p>Making beautiful forms is a breeze (and crucial in web apps)</p>
+            </li>
+            <li>
+                UX Files
+                <p><img src="images/illustrator.png" width="50" /> &amp; <img src="images/photoshop.png" width="50" /> files to be released soon</p>
+            </li>
+        </ul>
+    </div>
+
+    <div id="icons" class="step dust css" data-x="6800" data-y="2500" data-z="-2500" data-rotate="20" data-scale="3">
+        <span class="square"></span>
+        <h2>Icon font</h2>
+        <p>A library of icons both for web apps &amp; design process</p>
+
+        <p><i class="vicon">m</i>
+        <i class="vicon">e</i>
+        <i class="vicon">z</i>
+        <i class="vicon">c</i>
+        <i class="vicon">o</i>
+        <i class="vicon">t</i>
+        <i class="vicon">b</i>
+        <i class="vicon">a</i>
+        <i class="vicon">p</i>
+        <i class="vicon">×</i>
+        <i class="vicon">+</i>
+        <i class="vicon">*</i>
+        <i class="vicon">r</i>
+        <i class="vicon">s</i>
+        <i class="vicon">f</i>
+        <i class="vicon">d</i>
+        <i class="vicon">g</i>
+        <i class="vicon">h</i>
+        <i class="vicon">v</i>
+        <i class="vicon">w</i>
+        <i class="vicon">l</i>
+        <i class="vicon">‹</i>
+        <i class="vicon">›</i>
+        <i class="vicon">«</i>
+        <i class="vicon">»</i>
+        <i class="vicon">L</i></p>
+
+        <ul>
+            <li>
+                A pixel’s not a pixel
+                <p>True vector elements: HiDPI (Retina), mobile devices</p>
+            </li>
+            <li>
+                Effects
+                <p>Changing size, colors, CSS3 effects (animations, shadows, opacity, transforms)</p>
+            </li>
+            <li>
+                Making the icons
+                <p>Illustrator or Photoshop vectors (designers), Glyphs app, Font Squirrel</p>
+            </li>
+        </ul>
+    </div>
+
+    <div id="comp-sample" class="step dust components" data-x="8500" data-y="5000" data-z="-2000" data-rotate="-40" data-scale="4">
+        <span class="square"></span>
+        <h2>Components</h2>
+
+        <p>Buttons</p>
+
+        <form class="core-form form-horizontal">
+            <button class="btn btn-default">Default</button>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-tertiary">Tertiary</button>
+
+            <button class="btn btn-primary btn-loading"><span>Primary</span></button>
+
+            <div>
+              <label class="radio inline custom-radio mrl">
+                <input type="radio" name="customRadioButtons1" checked="checked">
+                <span class="custom-radio-element"></span>
+                Choice 1
+              </label>
+              <label class="radio inline custom-radio mrl">
+                <input type="radio" name="customRadioButtons1">
+                <span class="custom-radio-element"></span>
+                Choice 2
+              </label>
+              <label class="radio inline custom-radio mrl">
+                <input type="radio" name="customRadioButtons1">
+                <span class="custom-radio-element"></span>
+                Choice 3
+              </label>
+            </div>
+            <div class="input-append">
+                <input class="span2" id="appendedButtonPrimary" size="16" type="text" placeholder="Type something..." /><button class="btn btn-primary" type="button">Go!</button>
+            </div>
+        </form>
+
+        <p>Dropdowns &middot; Popovers</p>
+
+        <form class="core-form form-horizontal">
+            <div class="dd cur-clickout clickout-4">
+               <button class="dd-btn bootnode btn btn-default" data-event="click" data-view="comp_dropdown/view">Click<span class="global-icon arrow"></span></button>
+               <ul class="dd-menu no-prevent">
+                   <li class="dd-item"><a href="">Lorem ipsum</a></li>
+                   <li class="dd-item"><a href="">Consectetur adipisicing</a></li>
+                   <li class="dd-item"><a href="">Duis aute irure</a></li>
+               </ul>
+            </div>
+           <button class="btn btn-default">Primary action</button><div class="dd pull-right"><button class="dd-btn bootnode btn btn-default btn-append" data-event="click" data-view="comp_dropdown/view"><span class="global-icon arrow"></span></button>
+               <ul class="dd-menu no-prevent">
+                   <li class="dd-item"><a href="">dropdown item</a></li>
+                   <li class="dd-item"><a href="">dropdown item</a></li>
+                   <li class="dd-item"><a href="">dropdown item</a></li>
+               </ul>
+           </div>
+            <button href="" class="btn btn-default popover-display">
+                This element has a popover
+                <span class="popover">
+                    <span class="popover-header">Popover’s header</span>
+                    <span class="popover-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                    <span class="popover-footer">Popover’s footer</span>
+                </span>
+            </button>
+        </form>
+
+        <p>Popins</p>
+
+        <form class="core-form form-horizontal">
+            <button data-view="comp_popin/popin" data-event="click" data-popin="show" data-target-url="html/popin-sample-1.html" class="bootnode btn btn-primary">
+                Launch popin sample
+            </button>
+        </form>
+    </div>
+
+    <!-- END -->
+    <div id="overview" class="step" data-x="3400" data-y="3500" data-scale="10">
+        <img src="images/tetra-icon.svg">
+    </div>
+
+    <div id="questions" class="step" data-x="3000" data-y="7000" data-z="4000" data-rotate-x="-50" data-scale="4">
+        <h1>Questions?</h1>
+    </div>
+
+</div>
+
+<!--
+    The Hint explain how to browse the presentation
+-->
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>

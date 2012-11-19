@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="130px" height="130px" viewBox="0 0 130 130" enable-background="new 0 0 130 130" xml:space="preserve">
+<filter  id="Bur">
+	<feGaussianBlur  in="SourceGraphic" stdDeviation="3"></feGaussianBlur>
+</filter>
+<polygon opacity="0.8" fill="#00A2FF" points="16,80 73,13 87,106 "/>
+<polygon opacity="0.8" fill="#8F00A0" points="113,70 73,13 87,106 "/>
+<g opacity="0.4" filter="url(#Bur)">
+	<polygon fill="#BFBFBF" points="14,86 116,76 88,114 	"/>
+</g>
+<polygon opacity="0.5" fill="#FFF600" points="16,80 113,70 87,106 "/>
+</svg>
