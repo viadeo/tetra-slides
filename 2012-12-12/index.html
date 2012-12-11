@@ -10,6 +10,7 @@
 	<meta name="author" content="Frédéric Perrin" />
 
 	<link href="css/impress-demo.css" rel="stylesheet" />
+	<link href="lib/prism/prism.css" rel="stylesheet" />
 	
 	<link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -26,7 +27,7 @@
 
 <div id="impress">
 
-	<div class="step" data-x="0" data-y="0">
+	<div id="main-title" class="step" data-x="0" data-y="0">
 		<h1>Responsive Web Design</h1>
 		<img src="img/desktop.png" width="1000" />
 	</div>
@@ -56,20 +57,93 @@
 		</ul>
 	</div>
 
-	<div class="step" data-x="1250" data-y="300" data-z="-3000" data-scale="0.5">
+	<div id="chart" class="step" data-x="1250" data-y="300" data-z="-3000" data-scale="0.5">
 		<img src="img/the-end-of-the-pc-era.png" class="graph" />
 	</div>
 
 	<div class="step" data-x="35" data-y="1500">
 		<h1>Responsive Web Design</h1>
 		<ul>
-			<li>Offering an optimal user experience on a large variety of devices with only one website</li>
+			<li>Offering an optimal user experience on a large variety of devices</li>
 			<li>Desktop computer monitors</li>
 			<li>Tablets</li>
 			<li>Smartphones</li>
 			<li>TV</li>
 			<li>…</li>
 		</ul>
+	</div>
+
+	<div class="step" data-x="-840" data-y="910" data-rotate="-180">
+		<h1>Using a single website</h1>
+		<ul>
+			<li>Avoid browser sniffing (user agent)</li>
+			<li>Avoid development of a whole website for mobile (code duplication)</li>
+			<li>A website for mobile?</li>
+			<li>+ for tablet?</li>
+			<li>+ for … ?</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-840" data-y="80" data-rotate="-180">
+		<h1>Instead of looking at the type of a device…</h1>
+		<ul>
+			<li>Progressive enhancement based on feature detection</li>
+			<li>Re-architecturing the content</li>
+			<li>Instead of developing a native app</li>
+			<li>Instead of developing separate websites</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-840" data-y="-570" data-rotate="-180">
+		<h1>Media Queries</h1>
+		<h2>Looking at the capability of the device</h2>
+		<ul>
+			<li>Width &amp; height of the browser window</li>
+			<li>Device width &amp; height</li>
+			<li>Orientation (landscape or portrait)</li>
+			<li>Resolution (pixel density)</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="-60" data-y="-950" data-rotate="-90">
+		<h1>Concepts</h1>
+		<h2>A pixel’s not a pixel</h2>
+		<ul>
+			<li>Using CSS3 media queries</li>
+			<li>Adapting the layout to the viewing environment</li>
+			<li>Fluid layout: elements sizing in relative units</li>
+			<li>Images and video in relative units (up to 100% of the container)</li>
+			<li>Hi-DPI devices</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="850" data-y="-720" data-rotate="-90">
+		<h1>Breakpoints</h1>
+		<ul>
+			<li>Widths of devices</li>
+			<li>Two breakpoints for mobile</li>		
+			<li>Two breakpoints for tablets</li>
+			<li>…</li>
+			<li>For whatever you need</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1900" data-y="60" data-rotate="-360">
+		<h1>Demo</h1>
+		<h2>5 … 4 … 3 … 2 … 1 column(s)</h2>
+		<ul>
+			<li>Setting the viewport</li>
+		</ul>
+		<pre><code class="language-markup">&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0" /&gt;</code></pre>
+		<ul>
+			<li>Classic CSS linking</li>
+		</ul>
+		<pre><code class="language-markup">&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
+		<ul>
+			<li>CSS Media Queries</li>
+		</ul>
+		<pre><code class="language-css">@media screen and (max-width: 740px) { … }</code></pre>
 	</div>
 
 </div>
@@ -86,6 +160,8 @@ if ("ontouchstart" in document.documentElement) {
 
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
+
+<script src="lib/prism/prism.js"></script>
 
 </body>
 </html>
