@@ -9,7 +9,7 @@
 	<meta name="description" content="Slides for Dec 12th Web Development Meetup at Viadeo" />
 	<meta name="author" content="Frédéric Perrin" />
 
-	<link href="css/impress-demo.css" rel="stylesheet" />
+	<link href="css/impress.css" rel="stylesheet" />
 	<link href="lib/prism/prism.css" rel="stylesheet" />
 	
 	<link rel="shortcut icon" href="favicon.ico" />
@@ -129,8 +129,8 @@
 	</div>
 
 	<div class="step" data-x="1900" data-y="60" data-rotate="-360">
-		<h1>Demo</h1>
-		<h2>5 … 4 … 3 … 2 … 1 column(s)</h2>
+		<h1>Columns: 5 … 4 … 3 … 2 … 1</h1>
+		<h2><a href="http://viadeo.github.com/tetra-slides/2012-12-12/samples/" target="_blank">Launch the demo</a></h2>
 		<ul>
 			<li>Setting the viewport</li>
 		</ul>
@@ -144,6 +144,49 @@
 			<li>CSS Media Queries</li>
 		</ul>
 		<pre><code class="language-css">@media screen and (max-width: 740px) { … }</code></pre>
+	</div>
+
+	<div class="step" data-x="1900" data-y="760" data-rotate="-360">
+		<h1>Natural breakpoints</h1>
+		<ul>
+			<li>Too many devices</li>
+			<li>Smallest and largest screen sizes</li>		
+			<li>Fluid layout between breakpoints</li>
+			<li>Stretching the layout until it breaks… set a breakpoint here… repeat</li>
+			<li>Units in em (size of text) instead of px</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1900" data-y="1350" data-rotate="-360">
+		<h1>Advantages</h1>
+		<ul>
+			<li>Future ready</li>
+			<li>Avoiding unnecessary breakpoints</li>		
+			<li>A website can look good both on tablet and desktop</li>
+			<li>Unpredictable devices: TV screens</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1140" data-y="1670" data-rotate="-270">
+		<h1>Mobile first or desktop first?</h1>
+		<ul>
+			<li><b class="scaling">Mobile first</b> starting with the minimum viewport width</li>
+			<li><b class="positioning">Desktop first</b> starting with the maximum viewport width</li>		
+			<li>Both have advantages and drawbacks</li>
+			<li>It depends on the target</li>
+			<li>Supporting the <b class="rotating">legacy</b> desktop first is the natural choice</li>
+		</ul>
+	</div>
+
+	<div class="step" data-x="1540" data-y="850" data-rotate="-270" data-z="-1000">
+		<h1>Legacy browsers</h1>
+		<ul>
+			<li>Older browsers (IE 7, 8) are only on desktop</li>
+			<li>Desktop first, and media queries will be ignored</li>		
+			<li>Using a fixed width layout</li>
+			<li>JavaScript polyfills</li>
+			<li>Good work, Microsoft (IE 9, 10)</li>
+		</ul>
 	</div>
 
 </div>
