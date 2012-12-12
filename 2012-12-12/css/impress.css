@@ -717,8 +717,9 @@ b {
   font-style: normal;
 }
 
-#main-title h1 { margin-left: 30px; }
+#main-title h1 { margin-left: 30px; position: relative; width: 935px; }
 #chart { text-align: center; }
+.logo { position: absolute; height: 0.8em; right: 0; top: 0.35em; }
 .step { font-family: "OpenSans"; font-weight: 400; }
 .step h1, h2 { font-weight: 200; }
 .step h1 { font-size: 1.25em; }
