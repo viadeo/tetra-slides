@@ -727,3 +727,5 @@ b {
 .step img.graph { padding: 1em; background: white; box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4); }
 .step b { font-weight: 700; }
 .step pre[class*="language-"] { padding: 0.25em; font-size: 0.5em; }
+
+p.author { position: absolute; right: -95px; top: 115px; font-size: 16px; color: #555; }
